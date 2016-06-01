@@ -4,7 +4,7 @@
 
 #### UI
 
-- [ ] Redesign Theme
+- [x] Redesign Theme
 
 
 #### Articles

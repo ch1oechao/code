@@ -1,15 +1,19 @@
 ---
 layout: default
 ---
-
-{% include header.html %}
-
-<article class="post-body">
+{% include backhome.html %}
+<section class="post-body">
   <div class="container">
-
-    {{ content }}
-
+    <header class="article-header">
+      <h1>{{ page.title }}</h1>
+      <p class="meta">
+        {{ page.date | date_to_string }} ∞ {{ page.categories }}
+      </p>
+    </header>
+    <article class="article-body">
+      {{ content }}
+    </article>
+    {% include comment.html %}
   </div>
-  {% include return.html %}
-  {% include comment.html %}
-</article>
+</section>
+{% include backtop.html %}

@@ -1,9 +1,8 @@
-//Pagination
 .pagination {
   position: absolute;
-  right: 10px;
+  right: 15px;
   bottom: 10px;
-  left: 10px;
+  left: 15px;
 
   .previous {
     float: left;
@@ -23,18 +22,16 @@
   a {
     padding: 10px 20px;
     border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
     line-height: 40px;
     font-family: 'Open Sans', 'Lantinghei SC', sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
+    color: #CCC;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1px;
     &:hover {
-      background: #fff;
-      color: #ce2323;
+      color: #CE2323;
     }
   }
 }
