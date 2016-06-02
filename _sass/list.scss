@@ -6,20 +6,21 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   white-space: normal;
   text-align: justify;
   text-justify: inter-ideograph;
 
   .container {
-    width: 70%;
-    margin: 48px auto;
-    overflow: hidden;
+    width: 102%;
+    padding: 0 12%;
+    margin: 56px auto;
   }
 }
 
 .post-container {
-  overflow: hidden;
+  width: 100%;
+  max-height: 90%;
+  overflow-x: scroll;
 
   .post-list {
     list-style: none;
@@ -27,7 +28,7 @@
 
     li {
       float: left;
-      margin: 20px;
+      margin: 15px;
       padding: 20px;
       box-shadow: 0 0 8px 0 rgba(0, 0, 0, .25);
       transition: all .3s linear;
@@ -68,32 +69,80 @@
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .post-container {
+    .post-list {
+      li {        
+        margin: 18px;
+        padding: 20px;
+      }
+    }
+  } 
+}
+
+
+@media screen and (min-height: 1000px) {
+  .post-container {
+    .post-list {
+      li {        
+        margin: 20px;
+        padding: 30px;
+      }
+    }
+  } 
+}
+
+@media screen and (min-height: 1200px) {
+  .post-container {
+    .post-list {
+      li {        
+        margin: 30px;
+        padding: 50px;
+      }
+    }
+  } 
+}
+
+
 @media screen and (max-width: 960px) {
   .home-body {
     display: block;
-    width: 102%;
+    width: 100%;
     height: auto;
     overflow: visible;
     font-size: .9em;
+
     .container {
-      padding: 50px 5%;
-    }
-    li {
-      margin: 10px 0 5px 2em;
+      padding: 0 5%;
+      margin: 72px auto;
     }
   }
+
+  .post-container {
+    .post-list {
+      li {
+        display: block;
+        width: 85%;
+        padding: 20px 40px;
+        margin: 10px 6%;      
+      }
+    }
+  } 
 }
 
 @media screen and (max-width: 640px) {
-  .home-body {
-    font-size: .7em;
-    h2 {
-      font-size: 1.5em;
+
+  .post-container {
+    .post-list {
+      li {
+        display: block;
+        width: 90%;
+        padding: 20px;
+        margin: 10px 4%;      
+      }
     }
-    h3 {
-      font-size: 1.3em;
-    }
-  }
+  } 
+
 }
 
 @keyframes 'bodyshow' {

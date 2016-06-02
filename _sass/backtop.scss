@@ -1,26 +1,39 @@
 #returnTop {
   position: fixed;
-  right: 25px;
+  right: 15px;
   bottom: -200px;
-  width:36px;
-  height:65px;
-  color: #FFF;
-
-  background-image: url(//o40ss64l8.qnssl.com/top.png);
-  _background-image: url(//o40ss64l8.qnssl.com/top.png);
-
-  overflow:hidden;
-  background-repeat:no-repeat;
-  background-position:0 0;
-  transition:bottom 0.9s;
-  -webkit-transition:bottom 0.9s;
-  -moz-transition:bottom 0.9s;
-  -o-transition:bottom 0.9s;
+  display: block;
+  width: 21px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #CCC;
+  color: #CCC;
+  text-decoration: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  transition: all 300ms linear;
+  z-index: 9;
 
   cursor: pointer;
 
+  i {
+    color: #CCC;
+    transition: all 300ms linear;
+    &.fa-rocket {
+      position: absolute;
+      top: 15px;
+      left: 13px;
+      font-size: 1.1em;
+      transform: rotate(-45deg);    
+    }
+  }
+
   &:hover {
-    background-position:0 -65px;
+    border: 1px solid #CE2323;
+    i {
+      color: #CE2323;
+    }
   }
 }
 

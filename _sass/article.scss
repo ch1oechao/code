@@ -120,6 +120,16 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .post-body {
+    .container {
+      width: 80%;
+      padding: 50px 0;
+      margin: 50px auto;
+    }
+  }
+}
+
 @media screen and (max-width: 960px) {
   .post-body {
     display: block;
@@ -135,6 +145,8 @@
   }
 
   .article-body {
+    padding: 40px 45px;
+
     li {
       margin: 10px 0 5px 2em;
     }
@@ -143,6 +155,8 @@
 
 @media screen and (max-width: 640px) {
   .article-body {
+    padding: 20px;
+    box-shadow: none;
     font-size: .7em;
     h2 {
       font-size: 1.5em;

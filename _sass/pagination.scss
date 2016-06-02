@@ -1,8 +1,7 @@
 .pagination {
-  position: absolute;
-  right: 15px;
-  bottom: 10px;
-  left: 15px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
 
   .previous {
     float: left;
@@ -20,7 +19,8 @@
   }
 
   a {
-    padding: 10px 20px;
+    margin: 10px;
+    padding: 10px;
     border-radius: 4px;
     line-height: 40px;
     font-family: 'Open Sans', 'Lantinghei SC', sans-serif;
@@ -35,10 +35,4 @@
     }
   }
 }
-
-@media screen and (max-width: 960px) {
-  .pagination {
-    margin-bottom: 10px;
-    padding: 0 10px;
-  }
-}
+ 
