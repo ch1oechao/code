@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "ES6 Study Notes"
-date:  2015-09-21
+date:  2016-06-21
 categories: JavaScript
-featured_image: /images/js.jpg
 ---
 
 ### ECMAScript 6 Notes
@@ -17,7 +16,7 @@ featured_image: /images/js.jpg
 
 ##### let命令
 
-```let```用于变量声明，与```var```用法类似，但是```let```是一个局部变量，只在声明的代码块中有效。
+`let`用于变量声明，与`var`用法类似，但是`let`是一个局部变量，只在声明的代码块中有效。
 
     {
         let a = 10;
@@ -26,29 +25,29 @@ featured_image: /images/js.jpg
     a // not defined
     b // 20
     
-在上面的代码块外，```a```变量会显示```not defined```，而```b```有效。
+在上面的代码块外，`a`变量会显示`not defined`，而`b`有效。
 
 **注意**
 
-- ```let```不会有变量提升的现象，所以如果在定义```let```变量之前使用了该变量，会报错。
-- ```let```不允许在相同作用域内，重复声明同一个变量。
+- `let`不会有变量提升的现象，所以如果在定义`let`变量之前使用了该变量，会报错。
+- `let`不允许在相同作用域内，重复声明同一个变量。
 
 ##### const命令
 
-```const```用来声明常量，一旦声明，值就不能更改。
+`const`用来声明常量，一旦声明，值就不能更改。
 
 最常见的常量就是 
 
     const PI = 3.14;
     
-```const```的特点和```let```一致，块级作用域内有效，且不可重复声明。
+`const`的特点和`let`一致，块级作用域内有效，且不可重复声明。
 
 
 #### 函数的扩展
 
 ##### 扩展运算符
 
-```...``` 没错，三个点不是省略的意思，而是一个新的运算符！它将一个数组转换为用逗号分隔的参数序列。该运算符主要用于函数调用。
+`...` 没错，三个点不是省略的意思，而是一个新的运算符！它将一个数组转换为用逗号分隔的参数序列。该运算符主要用于函数调用。
 
     function add(x, y) {
         return x + y;
@@ -80,7 +79,7 @@ featured_image: /images/js.jpg
     
 ##### 箭头函数
 
-```=>```箭头定义函数，写函数简直不要太方便！
+`=>`箭头定义函数，写函数简直不要太方便！
 
     var fn = (a, b) => a + b;
     
@@ -107,7 +106,7 @@ featured_image: /images/js.jpg
     
 #### Promise对象
 
-```Promise```对象可以将异步操作，用同步操作的流程表达出来，避免了层层嵌套的回调函数。
+`Promise`对象可以将异步操作，用同步操作的流程表达出来，避免了层层嵌套的回调函数。
 同时，它提供了一套完整的接口，可以更加容易的控制异步操作。
 
     var promise = new Promise((resolve, reject) => {
@@ -125,14 +124,14 @@ featured_image: /images/js.jpg
         // failure
     });
     
-以上代码表示，```Promise```构造函数接受一个函数作为参数，该函数的参数分别为resolve方法和reject方法。
+以上代码表示，`Promise`构造函数接受一个函数作为参数，该函数的参数分别为resolve方法和reject方法。
 如果异步操作成功，则resolve方法执行，如果失败，reject方法执行。
 
-```promise```实例生成后，可以用```then()```方法分别指定resolve()和reject()的回调函数。
+`promise`实例生成后，可以用`then()`方法分别指定resolve()和reject()的回调函数。
 
 ##### 链式操作
 
-```then()```返回的是一个新的```Promise```对象，因此可以采用链式写法。
+`then()`返回的是一个新的`Promise`对象，因此可以采用链式写法。
 
     getSomething(val).then(() => {
         return newVal;
@@ -142,7 +141,7 @@ featured_image: /images/js.jpg
     
 ##### catch方法：捕捉错误
 
-```catch()```是```then(null, rejection)```的别名，用于指定发生错误时的回调函数。
+`catch()`是`then(null, rejection)`的别名，用于指定发生错误时的回调函数。
 同时，错误具有‘冒泡’性质，会一直向后传递，直到捕获为止。
 
     getSomething(val).then((thing) => {
@@ -155,7 +154,7 @@ featured_image: /images/js.jpg
     
 #### Class对象
 
-ES6引入了```Class```(类)的概念，作为对象的模板，通过```class```关键字，可以定义类，在处理后台传过来的复杂数据结构的时候简直好用到哭！
+ES6引入了`Class`(类)的概念，作为对象的模板，通过`class`关键字，可以定义类，在处理后台传过来的复杂数据结构的时候简直好用到哭！
 
     // 定义类
     class Point {
@@ -171,9 +170,9 @@ ES6引入了```Class```(类)的概念，作为对象的模板，通过```class``
     var point = new Point(2, 3);
     point.toString(); // (2, 3)
     
-其中，```constructor```函数就是构造函数，而```this```关键字代表着实例对象。
+其中，`constructor`函数就是构造函数，而`this`关键字代表着实例对象。
 
-```Class```之间可以通过```extends```关键字实现继承。
+`Class`之间可以通过`extends`关键字实现继承。
 
     class ColorPoint extends Point {
         constructor(x, y, color) {
@@ -185,8 +184,8 @@ ES6引入了```Class```(类)的概念，作为对象的模板，通过```class``
         }
     }
     
-上面代码定义了```ColorPoiner```类，该类通过```extends```关键字继承了```Point```类所有属性和方法。
-在```Constructor```方法内，```super()```就指代父类```Point```；在```toString```方法内，```super()```表示对父类的求值。
+上面代码定义了`ColorPoiner`类，该类通过`extends`关键字继承了`Point`类所有属性和方法。
+在`Constructor`方法内，`super()`就指代父类`Point`；在`toString`方法内，`super()`表示对父类的求值。
 
  
 ---

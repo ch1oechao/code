@@ -3,7 +3,6 @@ layout: post
 title:  "Util.js Notes"
 date:  2015-05-24
 categories: JavaScript
-featured_image: /images/js.jpg
 ---
 
 ### 关于原生JavaScript的学习笔记
@@ -19,7 +18,7 @@ featured_image: /images/js.jpg
 
 [[抛弃jQuery，深入原生的JavaScript]](http://ourjs.com/detail/535556a1ed9add0e26000002)
 
-<b>浏览器支持</b>
+**浏览器支持**
 
 > - IE9+
 - Firefox 3.5+
@@ -38,7 +37,7 @@ featured_image: /images/js.jpg
 以下原生方法在以上浏览器上支持。
 
 
-<b>基础原生JavaScript方法</b>
+**基础原生JavaScript方法**
 
 [Document Ready 事件]
 
@@ -68,7 +67,7 @@ featured_image: /images/js.jpg
 
 [[Javascript封装DOMContentLoaded事件]](http://dengo.org/archives/1037)
 
-<b>选择器API</b>
+**选择器API**
 
 [querySelector]
 
@@ -117,7 +116,7 @@ featured_image: /images/js.jpg
     $(".element")[0].on("touchstart", handleTouch);
 
 
-<b>添加和删除样式名（classname)</b>
+**添加和删除样式名（classname)**
 
 添加和删除<code>className</code>的时候会遇到坑
 
@@ -197,13 +196,13 @@ featured_image: /images/js.jpg
        element.classList.remove(className); 
     }
 
-<b>事件监听器</b>
+**事件监听器**
 
 文章并没有详细介绍，也没怎么看懂... 直接贴原神的帖子：
 
 [[Ryan Seddon's addEventListener, handleEvent and passing objects]](http://www.thecssninja.com/javascript/handleevent)
 
-<b>DOM操作</b>
+**DOM操作**
 
 [cloneNode] 节点克隆
 
@@ -235,7 +234,7 @@ featured_image: /images/js.jpg
 - [[更多DOM操作方法：DOM Core]](http://quirksmode.org/dom/core/)
 - [[各浏览器cloneNode方法的部分实现差异]](http://www.cnblogs.com/snandy/archive/2012/05/06/2473936.html)
 
-<b>在JS中决定响应图片的最大宽度</b>
+**在JS中决定响应图片的最大宽度**
 
 目前并没有实际运用到，所以贴上原文：
 
@@ -269,7 +268,7 @@ featured_image: /images/js.jpg
       return !!((img.complete && typeof img.naturalWidth !== "undefined") || img.width);
     }
 
-<b>判断一个元素是否在视图窗口中</b>
+**判断一个元素是否在视图窗口中**
 
 这个方法还没用过，不过我觉得在做返回顶部的功能块的时候可能会用到，所以先MARK原文：
 
@@ -290,6 +289,6 @@ featured_image: /images/js.jpg
 > 上面的函数可以在给窗体添加一个”滚动”事件监听器，然后调用<code>isInViewport()</code>方法时使用。
 
 
-<b>后记</b>
+**后记**
 
 关于原生操作，还有很多知识点要做笔记以及很多坑要踩。会不定时更新笔记，温故而知新。

@@ -3,7 +3,6 @@ layout: post
 title: "Blog Journal"
 date: 2015-05-01
 categories: new_start
-featured_image: /images/cover.jpg
 ---
 
 ### Blog Journal ╭( ･ㅂ･)و ̑̑" 博客流水账~
@@ -85,6 +84,12 @@ It's been a long time...
 #### 2016.03.30
 
 将 code 模块独立出来
+
+#### 2016.06
+
+更新了主页 UI 
+分别对 [code](http://www.chen9.info/code/) 和 [fragment](http://www.chen9.info/fragment/) 重新设计主题
+新增 [bookmarks](https://github.com/zchen9/bookmarks/issues) 模块 记录每阶段的阅读情况
  
 ---
 
@@ -95,4 +100,8 @@ It's been a long time...
 
 2015.10 - 2016.01 杭州 · 阿里 · 前端实习
 
-2016.01 - now 在家 · 学车 · 做毕设 · 计划旅行
+2016.01 - 2016.05 在家 · 学车 · 做毕设 · 计划旅行
+
+2016.05 - 2016.06 毕业 · 旅行
+
+2016.07 - future  杭州 · 阿里 · 入职上班

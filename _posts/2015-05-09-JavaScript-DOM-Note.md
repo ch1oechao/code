@@ -3,21 +3,19 @@ layout: post
 title:  "JavaScript DOM Note"
 date:  2015-05-07
 categories: JavaScript
-featured_image: /images/JavaScriptDOM.jpg
-
 ---
 
 ### 《JavaScript DOM 编程艺术》 笔记摘抄
 
 [DOM操作两项原则]
 
-<b>渐进增强(progressive enhancement)</b>
+**渐进增强(progressive enhancement)**
 
 > 渐进增强原则基于这样一种思想：你应该总是从最核心的部分，也就是从内容开始。
 应该根据内容使用标记良好的结构；然后再逐步加强这些内容。
 这些增强工作既可以是通过CSS改进呈现效果，也可以是通过DOM添加各种行为。
 
-<b>平稳退化</b>
+**平稳退化**
 
 > 
 渐进增强的实现必然支持平稳退化。
@@ -26,36 +24,36 @@ featured_image: /images/JavaScriptDOM.jpg
 
 [CSS-DOM]
 
-<b>三位一体的网页</b>
+**三位一体的网页**
 
-- <span>[ 结构层 structural layer ]</span>
+- [ 结构层 structural layer ]
 
 >
 结构层由HTML或XHTML之类的标记语言负责创建。
 标签(tag) 对网页内容的语义做出了描述。
 使用有意义的标签来构建页面的结构。
     
-- <span>[ 表示层 presentation layer ]
+- [ 表示层 presentation layer ]
     
 >
 表示层由CSS完成。CSS描述页面内容应该如何呈现。
 把表现性的信息都分离到CSS样式表中。
     
-- <span>[ 行为层 behavior layer ]</span>
+- [ 行为层 behavior layer ]
     
 >
 行为层负责内容应该如何响应事件这一问题。这是JavaScript和DOM主宰的领域。
 负责任地使用不唐突的JavaScript来应用行为增强，同时确保平稳退化。
 
 
-<b>分离</b>
+**分离**
 
 >
 - 使用(X)HTML去搭建文档的结构
 - 使用CSS去设置文档的呈现效果
 - 使用DOM脚本去实现文档的行为
 
-<b>使用CSS还是DOM?</b>
+**使用CSS还是DOM?**
 
 > 
 - 选择这个问题最简单的解决方案
@@ -64,16 +62,16 @@ featured_image: /images/JavaScriptDOM.jpg
 [nodeType常用值]
 
 >   
-- <span>元素节点</span> nodeType属性为 <span>1<span>
-- <span>属性节点</span> nodeType属性为 <span>2<span>
-- <span>文本节点</span> nodeType属性为 <span>3<span>
+- 元素节点 nodeType属性为 1
+- 属性节点 nodeType属性为 2
+- 文本节点 nodeType属性为 3
 
 
     
     
 [封装函数]
 
-<b>getElementsByClassName(node,classname) —— 兼容老浏览器</b>
+**getElementsByClassName(node,classname) —— 兼容老浏览器**
 
     function getElementsByClassName(node,classname) {
         if(node.getElementsByClassName) {
@@ -93,7 +91,7 @@ featured_image: /images/JavaScriptDOM.jpg
     }
 
         
-<b>getNextElement() —— 获取下一个元素节点</b>
+**getNextElement() —— 获取下一个元素节点**
 
     function getNextElement(node) {
         if(node.nodeType == 1) {
@@ -105,7 +103,7 @@ featured_image: /images/JavaScriptDOM.jpg
         return null;
     }
         
-<b>addLoadEvent() —— 共享onload事件</b>
+**addLoadEvent() —— 共享onload事件**
 
     function addLoadEvent(func) {
         var oldonload = window.onload;
@@ -121,7 +119,7 @@ featured_image: /images/JavaScriptDOM.jpg
     }
         
         
-<b>insertAfter() —— 在某元素后插入新元素</b>
+**insertAfter() —— 在某元素后插入新元素**
 
     //DOM已提供，在某元素之前插入新元素
     insertBefore(newElement,targetElement) 
@@ -136,7 +134,7 @@ featured_image: /images/JavaScriptDOM.jpg
         }
     }
         
-<b>addClass() —— 添加新的className</b>
+**addClass() —— 添加新的className**
         
     function addClass(element,value) {
         //判断className属性是否为空
@@ -152,7 +150,7 @@ featured_image: /images/JavaScriptDOM.jpg
         }
     }
         
-<b>moveElement() —— 基于CSS属性的动画</b>
+**moveElement() —— 基于CSS属性的动画**
 
     function moveElement(elementID,final_x,final_y,interval) {
 

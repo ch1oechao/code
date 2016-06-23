@@ -3,14 +3,11 @@ layout: post
 title:  "Scope of Object Notes in JavaScript"
 date:  2015-05-15
 categories: JavaScript
-featured_image: /images/js.jpg
 ---
 
 ### JavaScript作用域学习笔记
 
----
-
-<b>变量声明语块</b>
+**变量声明语块**
 
 JavaScript使用关键字var来声明变量。变量可以包含任意类型的数据：数组、整数、浮点数、字符串等。
 
@@ -21,7 +18,7 @@ JavaScript使用关键字var来声明变量。变量可以包含任意类型的�
 
 JavaScript是一种宽松型（loosely-typed）的语言也是一种动态语言，因为不需要指定变量的类型，并且即使在变量赋值以后，值的类型也可以通过赋予不同的类型值而改变。可以用var关键字同时声明多个变量并赋值，以逗号分隔。
 
-<b>对象字面量</b>
+**对象字面量**
 
 对象字面量是指用 {} 括起来的一组以逗号分隔的属性所定义的对象。属性用冒号设置。对象字面量也可以包含数组，数组用 [] 括起来的一组以逗号分隔的成员。
 
@@ -33,7 +30,7 @@ JavaScript是一种宽松型（loosely-typed）的语言也是一种动态语言
         }
     }
 
-<b>变量作用域</b>
+**变量作用域**
 
 在JavaScript中，唯一能定义变量作用域的语块就是函数。全局变量在函数外部定义，局部变量在函数内部定义。
 
@@ -54,7 +51,7 @@ JavaScript是一种宽松型（loosely-typed）的语言也是一种动态语言
     console.log( freeman );      //"I am free!"
     console.log( persioner );    //ERROR
 
-<b>变量提升</b>
+**变量提升**
 
 在JavaScript中，当变量声明时，声明会被提升到它所在的函数顶部，并被赋予undefined值。
 
@@ -89,7 +86,7 @@ JavaScript是一种宽松型（loosely-typed）的语言也是一种动态语言
     }
     prison();
 
-<b>高级变量提升</b>
+**高级变量提升**
 
 JavaScript引擎在进入作用域时，会对代码分为两轮处理。第一轮，初始化变量；第二轮，执行代码。
 
@@ -99,13 +96,13 @@ JavaScript引擎在进入作用域时，会对代码分为两轮处理。第一�
 - 声明局部变量，包括将匿名函数赋给一个局部变量，但不初始化它们。
 - 声明并初始化函数。
 
-<b>执行环境和执行环境对象</b>
+**执行环境和执行环境对象**
 
 执行环境由函数在执行时发生的所有事物组成。这和函数申明是分离的，因为函数声明描述了当前函数执行的时候会发生什么事情。执行环境是指函数的执行。
 
 属于执行环境部分的变量和函数，被保存在执行环境对象中，执行环境对象是执行环境的ECMA标准的实现。在JavaScript中，执行环境对象是一种对象，每次使用变量其实就是在访问执行环境对象的属性。
 
-<b>作用域链</b>
+**作用域链**
 
 JavaScript引擎在执行环境对象中访问作用域内的变量，查找的顺序叫做作用域链。
 
@@ -132,7 +129,7 @@ JavaScript引擎在执行环境对象中访问作用域内的变量，查找的�
     }
     superchen();
 
-<b>全局变量和window对象</b>
+**全局变量和window对象**
 
 - 浏览器的顶层对象是window对象
 - 在node.js中的顶层对象是global对象
@@ -146,7 +143,7 @@ window对象包含了很多属性，包括对象、方法（onload/onresize/aler
     console.log(window.global);            //"Global chen"
     console.log(global === window.global)  //true
 
-<b>自执行匿名函数</b>
+**自执行匿名函数**
 
 显式调用和自执行函数的对比（作用相同，都是创建一个函数然后立即调用它）：
 

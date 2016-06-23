@@ -3,8 +3,6 @@ layout: post
 title:  "JavaScript Modular Note"
 date:  2015-06-21
 categories: JavaScript
-featured_image: /images/js.jpg
-
 ---
 
 ### JavaScript模块化笔记摘抄

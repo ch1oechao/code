@@ -3,7 +3,6 @@ layout: post
 title: "Fix hexo deploy"
 date: 2016-03-28
 categories: Hexo
-featured_image: /images/cover.jpg
 ---
 
 ### 解决 Hexo 发布问题

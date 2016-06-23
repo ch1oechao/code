@@ -3,8 +3,6 @@ layout: post
 title:  "Some Nice Code With JS"
 date:  2015-08-17
 categories: JavaScript
-featured_image: /images/js.jpg
-
 ---
 
 ### JS中一些建议写法
@@ -15,16 +13,16 @@ featured_image: /images/js.jpg
 
 #### 文件 
 
-- ```JavaScript``` 文件使用 ```无BOM``` 的 ```UTF-8``` 编码
+- `JavaScript` 文件使用 `无BOM` 的 `UTF-8` 编码
 - 在文件结尾处，保留一个空行
 
 	> UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰
 
 #### 注释
 
-- **单行注释**  单独占一行 ```//``` 后跟一个空格 
+- **单行注释**  单独占一行 `//` 后跟一个空格 
 - **多行注释**  有多行注释内容时，使用多个单行注释
-- **文档化注释**  内容包含以 ```/**...*/``` 形式的块注释
+- **文档化注释**  内容包含以 `/**...*/` 形式的块注释
 	- 文件 @file {说明文件作用}
 	- 命名空间 @namespace 
 	- 类 @class {类名 解释说明作用} 
@@ -38,9 +36,9 @@ featured_image: /images/js.jpg
 
 ##### 变量 
 
-- 变量在使用前必须通过 ```var``` 或 ```let``` 定义, 否则会产生全局变量，污染全局环境
+- 变量在使用前必须通过 `var` 或 `let` 定义, 否则会产生全局变量，污染全局环境
 
-- 每个 ```var``` 或 ```let``` 只能声明一个变量
+- 每个 `var` 或 `let` 只能声明一个变量
 
 		var name = 'chen';
 		var hehe = 'haha';
@@ -56,7 +54,7 @@ featured_image: /images/js.jpg
 
 ##### 条件
 
-- 在 Equality Expression 中使用类型严格的 ```===```。仅当判断 ```null``` 或 ```undefined``` 时，允许使用 ```== null``` 
+- 在 Equality Expression 中使用类型严格的 `===`。仅当判断 `null` 或 `undefined` 时，允许使用 `== null` 
 
 	> 使用 === 可以避免等于判断中隐式的类型转换。
 
@@ -84,13 +82,13 @@ featured_image: /images/js.jpg
 		}
 
 - 按执行频率排列分支的顺序
-- 对于相同变量或表达式的多值条件，用 ```switch``` 代替 ```if```
-- 如果函数或全局中的 ```else``` 块后没有任何语句，可以删除 ```else```
+- 对于相同变量或表达式的多值条件，用 `switch` 代替 `if`
+- 如果函数或全局中的 `else` 块后没有任何语句，可以删除 `else`
 
 
 ##### 循环
 
-- 对有序集合进行遍历时，缓存 ```length```
+- 对有序集合进行遍历时，缓存 `length`
 
 		for (var i = 0, len = eles.length; i < len; i++) {
     		var ele = eles[i];
@@ -138,30 +136,30 @@ featured_image: /images/js.jpg
 
 **类型检测**
 
-- 类型检测优先使用 ```typeof```
-- 对象类型检测使用 ```instanceof```
-- ```null``` 或 ```undefined``` 的检测使用 ```== null```
+- 类型检测优先使用 `typeof`
+- 对象类型检测使用 `instanceof`
+- `null` 或 `undefined` 的检测使用 `== null`
 
 **类型转换**
 
-- 转换成 ```string``` 时，使用 ```+ ''```
+- 转换成 `string` 时，使用 `+ ''`
 
 		var numStr = num + '';
 
-- 转化为 ```number``` 时，使用 ```+``` 
+- 转化为 `number` 时，使用 `+` 
 		
 		var num = +str;
 		
-- ```string``` 转换成 ```number```，要转换的字符串结尾包含非数字并期望忽略时，使用 ```parseInt```，且必须制定进制
+- `string` 转换成 `number`，要转换的字符串结尾包含非数字并期望忽略时，使用 `parseInt`，且必须制定进制
 
 		var width = '100px';
 		parseInt(width, 10);
 
-- 转换为 ```boolean``` 时，使用 ```!!```
+- 转换为 `boolean` 时，使用 `!!`
 
 		var bool = !!num;
 		
-- ```number``` 去除小数点 使用 ```Math.floor / Math.round / Math.ceil``` 不使用 ```parseInt```
+- `number` 去除小数点 使用 `Math.floor / Math.round / Math.ceil` 不使用 `parseInt`
 
 		// good
 		var num = 3.14;
@@ -169,11 +167,11 @@ featured_image: /images/js.jpg
 		
 **字符串**
 
-- 字符串开头和结束使用单引号 ```'```
+- 字符串开头和结束使用单引号 `'`
 
 		var html = '<div class="cls">拼接HTML可以省去双引号转义</div>';
 
-- 使用 数组 或 ```+``` 拼接字符串
+- 使用 数组 或 `+` 拼接字符串
 
 		// 使用数组拼接字符串
 		var str = [
@@ -194,18 +192,18 @@ featured_image: /images/js.jpg
 
 **对象**
 
-- 使用对象字面量 ```{}``` 创建新 ```Object```
+- 使用对象字面量 `{}` 创建新 `Object`
 
 		var obj = {};
 
-- 对象创建时，如果一个对象的所有 ```属性``` 均可以不添加引号，则所有 ```属性``` 不得添加引号
+- 对象创建时，如果一个对象的所有 `属性` 均可以不添加引号，则所有 `属性` 不得添加引号
 
 		var info = {
 			name: 'hehe',
 			age: 666
 		};
 
-- 对象创建时，如果任何一个 ```属性``` 需要添加引号，则所有 ```属性``` 必须添加 ```'```
+- 对象创建时，如果任何一个 `属性` 需要添加引号，则所有 `属性` 必须添加 `'`
 
 		var info = {
 			'name': 'heheda',
@@ -218,12 +216,12 @@ featured_image: /images/js.jpg
 		// Don't Do This !!!
 		String.prototype.trim = () => {};
 
-- 属性访问时，尽量使用 ```.```
+- 属性访问时，尽量使用 `.`
 
 		info.age; //better
 		info[name];
 
-- ```for in``` 遍历对象时, 使用 ```hasOwnProperty``` 过滤掉原型中的属性
+- `for in` 遍历对象时, 使用 `hasOwnProperty` 过滤掉原型中的属性
 
 		var newObj = {};
 		for (var key in obj) {
@@ -234,22 +232,22 @@ featured_image: /images/js.jpg
 
 **数组**
 
-- 使用数组字面量 ```[]``` 创建新数组，除非想要创建的是指定长度的数组
+- 使用数组字面量 `[]` 创建新数组，除非想要创建的是指定长度的数组
 
 		var arr = [];
 
-- 遍历数组不使用 ```for in```
+- 遍历数组不使用 `for in`
 
 		// good
 		for (var i = 0, len = arr.length; i < len; i++) {
 			console.log(i);
 		}
 
-- 不因为性能的原因自己实现数组排序功能，尽量使用数组的 ```sort``` 方法
+- 不因为性能的原因自己实现数组排序功能，尽量使用数组的 `sort` 方法
 
 	> 自己实现的常规排序算法，在性能上并不优于数组默认的 sort 方法。
 
-- 清空数组使用 ```.length = 0```
+- 清空数组使用 `.length = 0`
 
 **函数**
 
@@ -288,7 +286,7 @@ featured_image: /images/js.jpg
 
 **面向对象**
 
-- 类的继承方案，实现时需要修正 ```constructor```
+- 类的继承方案，实现时需要修正 `constructor`
 
 		/**
 		* 构建类之间的继承关系
@@ -303,7 +301,7 @@ featured_image: /images/js.jpg
     		subClass.prototype.constructor = subClass;
 		}
 		
-- 声明类时，保证 ```constructor``` 的正确性
+- 声明类时，保证 `constructor` 的正确性
 
 		function Animal(name) {
     		this.name = name;
@@ -337,17 +335,17 @@ featured_image: /images/js.jpg
 		
 **动态特性**
 
-- 避免使用直接 ```eval``` 函数
+- 避免使用直接 `eval` 函数
 
 	> 直接 eval，指的是以函数方式调用 eval 的调用方法。直接 eval 调用执行代码的作用域为本地作用域，应当避免。
 
-- 尽量避免使用 ```eval``` 函数
+- 尽量避免使用 `eval` 函数
 
-- 尽量不要使用 ```with```
+- 尽量不要使用 `with`
 
 	> 使用 with 可能会增加代码的复杂度，不利于阅读和管理；也会对性能有影响。大多数使用 with 的场景都能使用其他方式较好的替代。所以，尽量不要使用 with。
 	
-- 减少 ```delete``` 使用
+- 减少 `delete` 使用
 
 	> 如果没有特别的需求，减少或避免使用delete。delete的使用会破坏部分 JavaScript 引擎的性能优化。
 
@@ -360,7 +358,7 @@ featured_image: /images/js.jpg
 
 	> 原生获取元素集合的结果并不直接引用 DOM 元素，而是对索引进行读取，所以 DOM 结构的改变会实时反映到结果中。
 
-- 获取元素的直接子元素时使用 ```children``` 避免使用 ```childNodes``` 除非预期是需要包含文本、注释和属性类型的节点
+- 获取元素的直接子元素时使用 `children` 避免使用 `childNodes` 除非预期是需要包含文本、注释和属性类型的节点
 
 **样式设置**
 
@@ -369,7 +367,7 @@ featured_image: /images/js.jpg
 
 **DOM操作**
 
-- 操作 ```DOM``` 时，尽量减少页面 ```reflow```
+- 操作 `DOM` 时，尽量减少页面 `reflow`
 
 	> 页面 reflow 是非常耗时的行为，非常容易导致性能瓶颈。下面一些场景会触发浏览器的reflow：
 
@@ -378,7 +376,7 @@ featured_image: /images/js.jpg
 	- Resize浏览器窗口、滚动页面。
 	- 读取元素的某些属性（offsetLeft、offsetTop、offsetHeight、offsetWidth、scrollTop/Left/Width/Height、clientTop/Left/Width/Height、getComputedStyle()、currentStyle(in IE)) 。
 	
-- 在循环体中拼接 ```HTML``` 字符串，循环结束后写父元素的 ```innerHTML``` 
+- 在循环体中拼接 `HTML` 字符串，循环结束后写父元素的 `innerHTML` 
 
 **DOM事件**
 

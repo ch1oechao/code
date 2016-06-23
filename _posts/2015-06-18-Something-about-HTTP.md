@@ -2,9 +2,7 @@
 layout: post
 title:  "Something about HTTP"
 date:  2015-06-18
-categories: Web
-featured_image: /images/http.jpg
-
+categories: HTTP
 ---
 
 ### 《图解HTTP》 笔记摘抄
@@ -82,7 +80,7 @@ HTTP状态码负责表示客户端HTTP请求的返回结果、标记服务器端
 
 以上是我在电脑上所安装的浏览器中所查找到的各类UserAgent。
 
-基于这个属性，可以通过 <code>HTML DOM userAgent</code> 属性判断访问者的浏览器和版本号或者设备类型。 [[具体用法]](http://www.w3school.com.cn/jsref/prop_nav_useragent.asp)
+基于这个属性，可以通过  `HTML DOM userAgent`  属性判断访问者的浏览器和版本号或者设备类型。 [[具体用法]](http://www.w3school.com.cn/jsref/prop_nav_useragent.asp)
 
 #### Set-Cookie
 
@@ -140,7 +138,7 @@ HTTPS采用共享密钥加密和公开密钥加密两者并用的混合加密机
 
 #### Ajax ( Asynchronous JavaScript and XML ) 异步JavaScript与XML技术
 
-是一种有效利用<code>JavaScript</code>和<code>DOM</code>(Document Object Model, 文档对象模型)的操作。已达到局部Web页面替换加载的异步通信手段。
+是一种有效利用 `JavaScript` 和 `DOM` (Document Object Model, 文档对象模型)的操作。已达到局部Web页面替换加载的异步通信手段。
 
 其核心技术是名为XMLHttpRequest的API，通过JavaScript的调用就能和服务器进行HTTP通信。
 

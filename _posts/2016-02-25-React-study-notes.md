@@ -2,8 +2,7 @@
 layout: post
 title:  "React Study Notes"
 date:  2016-02-25
-categories: JavaScript
-featured_image: /images/react.jpg
+categories: React
 ---
 
 ### Record some points when coding React

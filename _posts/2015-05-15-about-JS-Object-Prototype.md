@@ -3,14 +3,13 @@ layout: post
 title:  "Prototype of Object Notes in JavaScript"
 date:  2015-05-15
 categories: JavaScript
-featured_image: /images/js.jpg
 ---
 
 ### JavaScript原型学习笔记
 
 ---
 
-<b>JavaScript对象和原型链</b>
+**JavaScript对象和原型链**
 
 基于原型的对象创建：
 
@@ -39,7 +38,7 @@ featured_image: /images/js.jpg
     var firstStudent = new Student("Chen","123");
     var secondStudent = new Student("Zhao","456");
 
-<b>使用Object.create替代new创建对象</b>
+**使用Object.create替代new创建对象**
 
 JavaScript使用了new操作符，违背了基于原型的核心思想，使用Object.create创建JavaScript对象，会比较接近基于原型的思想。
 
@@ -75,7 +74,7 @@ JavaScript使用了new操作符，违背了基于原型的核心思想，使用O
 
     var secondStudent = makeStudent("Zhao","456");
 
-<b>在老式浏览器上的Object.create</b>
+**在老式浏览器上的Object.create**
 
 Object.create在IE9+/Firefox4+/Safari5+/Chrome5+中有效。
 
@@ -89,7 +88,7 @@ Object.create在IE9+/Firefox4+/Safari5+/Chrome5+中有效。
     };
     Object.create = Object.create ||objectCreate;
 
-<b>原型链</b>
+**原型链**
 
 JavaScript使用原型链来解析属性值。原型链描述了JavaScript引擎如何从对象查找到原型以及原型的原型，来定位对象的属性。
 
@@ -99,6 +98,6 @@ JavaScript使用原型链来解析属性值。原型链描述了JavaScript引擎
 - 当JavaScript达到通用的Object的原型，原型链就结束了。
 - 如果JavaScript在原型链上的所有地方都找不到请求的属性，则返回undefined。
 
-<b>更改原型</b>
+**更改原型**
 
 原型继承能够使得所有基于原型的对象即可发生变化。如果更改原型对象，那么所有之前和之后创建的对象都会是更改后的值。

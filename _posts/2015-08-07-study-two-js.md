@@ -1,10 +1,8 @@
 ---
 layout: post
-title:  "Study Two.js Note (1)"
+title:  "Study Two.js Note"
 date:  2015-08-07
-categories: JavaScript
-featured_image: /images/js.jpg
-
+categories: TwoJS
 ---
 
 ### Drawing With Two.js
@@ -13,7 +11,7 @@ featured_image: /images/js.jpg
 
 Two.js 是一个对面现代Web浏览器的二维绘图API，它可以提供多样的渲染器: SVG / Canvas / WebGL
 
-在线编辑 ```Two.js``` 的好地方： [http://www.javascriptoo.com/two-js](http://www.javascriptoo.com/two-js)
+在线编辑 `Two.js` 的好地方： [http://www.javascriptoo.com/two-js](http://www.javascriptoo.com/two-js)
 
 #### Setting Up 准备工作
 
@@ -23,17 +21,17 @@ Two.js 是一个对面现代Web浏览器的二维绘图API，它可以提供多�
 		fullscreen: true
 	});
 	
-以上代码创建了一个 ```two``` 实例，其中 <code>fullscreen</code> 为 ```Two``` 构造函数中的一个参数
+以上代码创建了一个 `two` 实例，其中 <code>fullscreen</code> 为 `Two` 构造函数中的一个参数
 
-- ```fullscreen``` 表示将绘制一个占满浏览器窗口的画布
+- `fullscreen` 表示将绘制一个占满浏览器窗口的画布
 
-- ```width``` & ```height``` 如果需要指定特定大小的画布，需要设置明确的宽度和高度
+- `width` & `height` 如果需要指定特定大小的画布，需要设置明确的宽度和高度
 
-- ```type``` 指定需要应用的渲染器类型，你可以选择 SVG / Canvas / WebGL 默认情况下，Two.js 使用 SVG (需要自己检测浏览器是否支持选择的渲染器)
+- `type` 指定需要应用的渲染器类型，你可以选择 SVG / Canvas / WebGL 默认情况下，Two.js 使用 SVG (需要自己检测浏览器是否支持选择的渲染器)
 
 ###### 添加到页面中
 
-创建好实例以后，我们将使用到 ```appendTo``` 方法，将实例添加到页面中
+创建好实例以后，我们将使用到 `appendTo` 方法，将实例添加到页面中
 
 在HTML中设置：
 
@@ -53,12 +51,12 @@ Two.js 是一个对面现代Web浏览器的二维绘图API，它可以提供多�
 
 ##### Line 线段
 
-```makeLine(x1, y1, x2, y2)```
+`makeLine(x1, y1, x2, y2)`
 
 > Draws a line between two coordinates to the instance's drawing space where x1, y1 are the x, y values for the first coordinate and x2, y2 are the x, y values for the second coordinate. It returns a Two.Polygon object.
 
-前两个参数 ```x1, y1``` 为线段起点在画面坐标轴的位置
-后两个参数 ```x2, y2``` 为线段终点在画面坐标轴的位置
+前两个参数 `x1, y1` 为线段起点在画面坐标轴的位置
+后两个参数 `x2, y2` 为线段终点在画面坐标轴的位置
 
 以下代码绘制了起点为(10, 10)，终点为(110, 210)的线段
 
@@ -73,7 +71,7 @@ Two.js 是一个对面现代Web浏览器的二维绘图API，它可以提供多�
 
 ##### Circle 圆形
 
-```makeCircle(x, y, radius)```
+`makeCircle(x, y, radius)`
 	
 > Draws a circle to the instance's drawing space where x, y are the x, y values for the center point of the circle and radius is the radius of the circle. It returns a Two.Polygon object.
 
@@ -93,12 +91,12 @@ Two.js 是一个对面现代Web浏览器的二维绘图API，它可以提供多�
 
 ##### Rectangle 方形
 
-```makeRectangle(x, y, width, height)```
+`makeRectangle(x, y, width, height)`
 
 > Draws a rectangle to the instance's drawing space where x, y are the x, y values for the center point of the rectangle and width, height represents the width and height of the rectangle. It returns a Two.Polygon object.
 
-```makeRectangle``` 需要四个参数：坐标x值，坐标y值，宽度，高度。
-和制作圆形一样，```x``` 和 ```y``` 值指的是方形中心距离坐标的x, y距离。
+`makeRectangle` 需要四个参数：坐标x值，坐标y值，宽度，高度。
+和制作圆形一样，`x` 和 `y` 值指的是方形中心距离坐标的x, y距离。
 
 下面这段代码绘制了一个坐标为(115, 90)，宽度为150，高度为100的长方形
 
@@ -115,7 +113,7 @@ Two.js 是一个对面现代Web浏览器的二维绘图API，它可以提供多�
 
 ##### Ellipse 椭圆
 
-```makeEllipse(x, y, width, height)```
+`makeEllipse(x, y, width, height)`
 
 > Draws an ellipse to the instance's drawing space where x, y are the x, y values for the center point of the ellipse and width, height are the dimensions of the ellipse. It returns a Two.Polygon object.
 
@@ -135,7 +133,7 @@ makeEllipse(x, y, width, height)的构造和方形一致，也需要四个参数
 
 ##### Curve 曲线
 
-```makeCurve(x1, y1, x2, y2, xN, yN, open)```
+`makeCurve(x1, y1, x2, y2, xN, yN, open)`
 
 > Draws a curved polygon to the instance's drawing space. The arguments are a little tricky. It returns a Two.Polygon object.
 > 
@@ -144,9 +142,9 @@ makeEllipse(x, y, width, height)的构造和方形一致，也需要四个参数
 This method also recognizes the format
 > two.makeCurve(points, open) where points is an array of Two.Anchor's and open is an optional boolean describing whether or not to expose endpoints. It is imperative if you generate curves this way to make the list of points Two.Anchor's.
 
-```makeCurve()```方法可以根据需要设置许多对(x, y)值，每一对值是一个坐标点，它为这段弧线的一个切点。最后一个参数为布尔值，```true```表示这段弧线是开放不闭合的，意味着它的首尾点不相连。如果需要将曲线闭合，则将布尔值设置为```false```
+`makeCurve()`方法可以根据需要设置许多对(x, y)值，每一对值是一个坐标点，它为这段弧线的一个切点。最后一个参数为布尔值，`true`表示这段弧线是开放不闭合的，意味着它的首尾点不相连。如果需要将曲线闭合，则将布尔值设置为`false`
 
-同时，```makeCurve()``` 接收两个参数 (points, open)，第一个为多组向量组成的数组，第二个值依旧是布尔值。
+同时，`makeCurve()` 接收两个参数 (points, open)，第一个为多组向量组成的数组，第二个值依旧是布尔值。
 
 以下代码绘制了一段曲线
 
@@ -164,7 +162,7 @@ This method also recognizes the format
 	
 ##### Polygon 多边形
 
-```makePolygon(x1, y1, x2, y2, xN, yN, open)```
+`makePolygon(x1, y1, x2, y2, xN, yN, open)`
 
 > Draws a polygon to the instance's drawing space. The arguments are a little tricky. It returns a Two.Polygon object.
 > 
@@ -197,11 +195,11 @@ This method also recognizes the format
 
 目前为止，我们的画面一直都是在绘制单个的图形，然而在同一个画面上绘制多个图形进行拼接也是可以的~
 
-```makeGroup(objects)```
+`makeGroup(objects)`
 
 > Adds a group to the instance's drawing space. While a group does not have any visible features when rendered it allows for nested transformations on shapes. See Two.Group for more information. It accepts an array of objects, Two.Polygons or Two.Groups. As well as a list of objects as the arguments, two.makeGroup(o1, o2, oN). It returns a Two.Group object.
 
-```two.makeGroup(o1, o2, oN)```可以接受一系列的图形对象，最终返回一个two.Group对象
+`two.makeGroup(o1, o2, oN)`可以接受一系列的图形对象，最终返回一个two.Group对象
 
 以下代码绘制了一个方形加一个圆形：
 
@@ -248,7 +246,7 @@ This method also recognizes the format
 
 ![方圆组图](http://7xl44r.com1.z0.glb.clouddn.com/two-group-rect-circle.png)
 
-但，如果我们将```rect```添加到```bottomGroup```中
+但，如果我们将`rect`添加到`bottomGroup`中
 
 	bottomGroup.add(rect);
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-title:  "Shell CMD Notes (1)"
+title:  "Shell CMD Notes - Help & Zip"
 date:  2016-02-01
 categories: Shell
-featured_image: /images/shell.jpg
 ---
 
 Shell 命令笔记 [ 帮助命令 / 压缩与解压缩命令 ]
