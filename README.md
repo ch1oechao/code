@@ -1,14 +1,14 @@
 # Tech Diary
 
-### Todolist
+- 技术帖 [[ issue ]](https://github.com/zchen9/code/issues)
+- 文艺码 [[ code ]](http://www.chen9.info/code/)
+- 收集癖 [[ bookmarks ]](https://github.com/zchen9/bookmarks)
 
-#### UI
-
-- [x] Redesign Theme
-
-
-#### Articles
+### Todo
 
 - [ ] HTML5 Canvas
-- [ ] MEAN
 
+### Done
+
+- [x] Redesign Theme
+- [x] MEAN Notes
