@@ -92,10 +92,10 @@
     padding: 2px 5px;
     margin: 0 2px;
     border-radius: 3px;
-    color: rgba(255,58,71,.5);
+    color: #CE2323;
+    background-color: rgba(255,58,71,.03);
     font-weight: 400;
-    background-color: rgba(200,111,222,.02);    
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Arial, sans-serif;
+    font-family: Menlo, Consolas, Arial, sans-serif;
 
     &.hljs {
       line-height: 1.4em;
