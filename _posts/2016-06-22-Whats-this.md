@@ -47,7 +47,7 @@ categories: JavaScript
     function hello(name) {
         return 'Hello' + name + '!';
     }
-    // Function invocation
+    // 函数调用
     var message = hello('World');
     console.log(message); // => 'Hello World!'
 
@@ -70,11 +70,11 @@ categories: JavaScript
 
     function sum(a, b) {  
        console.log(this === window); // => true
-       this.myNumber = 20; // add 'myNumber' property to global object
+       this.myNumber = 20; // 在全局对象中添加 'myNumber' 属性
        return a + b;
     }
-    // sum() is invoked as a function
-    // this in sum() is a global object (window)
+    // sum() 为函数调用
+    // this 在 sum() 中是全局对象 (window)
     sum(15, 16);     // => 31  
     window.myNumber; // => 20  
 
@@ -86,7 +86,7 @@ categories: JavaScript
     this.myString = 'Hello World!';  
     console.log(window.myString); // => 'Hello World!'  
     
-    <!-- In an html file -->  
+    <!-- 在 HTML 文件里 -->  
     <script type="text/javascript">  
        console.log(this === window); // => true
     </script>  
@@ -100,12 +100,12 @@ categories: JavaScript
 在严格模式下执行函数的一个例子：
 
     function multiply(a, b) {  
-      'use strict'; // enable the strict mode
+      'use strict'; // 开启严格模式
       console.log(this === undefined); // => true
       return a * b;
     }
-    // multiply() function invocation with strict mode enabled
-    // this in multiply() is undefined
+    // 严格模式下的函数调用 multiply() 
+    // this 在 multiply() 中为 undefined
     multiply(2, 5); // => 10 
 
 当 `multiply(2, 5)` 执行时，这个函数中的 `this` 是 `undefined`。
@@ -113,14 +113,14 @@ categories: JavaScript
 严格模式不仅在当前作用域起到作用，它还会影响内部作用域，即内部声明的一切内部函数的作用域。
 
     function execute() {  
-       'use strict'; // activate the strict mode    
+       'use strict'; // 开启严格模式
        function concat(str1, str2) {
-         // the strict mode is enabled too
+         // 内部函数也是严格模式
          console.log(this === undefined); // => true
          return str1 + str2;
        }
-       // concat() is invoked as a function in strict mode
-       // this in concat() is undefined
+       // 在严格模式下调用 concat()
+       // this 在 concat() 下是 undefined
        concat('Hello', ' World!'); // => "Hello World!"
     }
     execute();  
@@ -130,21 +130,21 @@ categories: JavaScript
 一个简单的 JavaScript 文件可能同时包含严格模式和非严格模式，所以在同一种类型调用中，可能也会有不同的上下文行为差异。
 
     function nonStrictSum(a, b) {  
-      // non-strict mode
+      // 非严格模式
       console.log(this === window); // => true
       return a + b;
     }
     function strictSum(a, b) {  
       'use strict';
-      // strict mode is enabled
+      // 严格模式
       console.log(this === undefined); // => true
       return a + b;
     }
-    // nonStrictSum() is invoked as a function in non-strict mode
-    // this in nonStrictSum() is the window object
+    // nonStrictSum() 在非严格模式下被调用
+    // this 在 nonStrictSum() 中是 window 对象
     nonStrictSum(5, 6); // => 11  
-    // strictSum() is invoked as a function in strict mode
-    // this in strictSum() is undefined
+    // strictSum() 在严格模式下被调用
+    // this 在 strictSum() 中是 undefined
     strictSum(8, 12); // => 20  
 
 #### 陷阱：`this` 在内部函数中
@@ -163,14 +163,14 @@ categories: JavaScript
        sum: function() {
          console.log(this === numbers); // => true
          function calculate() {
-           // this is window or undefined in strict mode
+           // 严格模式下， this 是 window or undefined
            console.log(this === numbers); // => false
            return this.numberA + this.numberB;
          }
          return calculate();
        }
     };
-    numbers.sum(); // => NaN or throws TypeError in strict mode  
+    numbers.sum(); // => 严格模式下，结果为 NaN 或者 throws TypeError  
 
 `numbers.sum()` 是对象内的一个方法调用，因此 `sum` 的上下文是 `numbers` 对象，而 `calculate` 函数定义在 `sum` 函数内，所以会误以为在 `calculate` 内 `this` 也指向的是 `numbers`。
 
@@ -189,7 +189,7 @@ categories: JavaScript
            console.log(this === numbers); // => true
            return this.numberA + this.numberB;
          }
-         // use .call() method to modify the context
+         // 使用 .call() 方法修改上下文环境
          return calculate.call(this);
        }
     };
@@ -197,7 +197,121 @@ categories: JavaScript
 
 `calculate.call(this)` 同样执行 `calculate` 函数，但是格外的添加了 `this`作为第一个参数，修改了上下文执行环境。此时的 `this.numberA + this.numberB` 等同于 `numbers.numberA + numbers.numberB`，其最终的结果就会如期盼的一样为 `result 5 + 10 = 15`。
 
----
+### 方法调用
 
-未完待续...
+方法是作为一个对象属性存储的函数，举个例子：
 
+    var myObject = {  
+      // helloFunction 是对象中的方法
+      helloFunction: function() {
+        return 'Hello World!';
+      }
+    };
+    var message = myObject.helloFunction();  
+
+`helloFunction` 是属于 `myObject` 的一个方法，调用这个方法可以使用属性访问的方式 `myObject.helloFunction`。
+
+方法调用表现为对象属性访问的形式，支持传入用成对引号包裹起来的一系列参数。上个例子中，`myObject.helloFunction()` 其实就是对象 `myObject` 上对属性 `helloFunction` 的方法调用。同样，`[1, 2].join(',')` 和 `/\s/.test('beautiful world')` 都是方法调用。
+
+区分函数调用和方法调用是非常重要的，它们是不同类型的调用方式。主要的差别在于方法调用为访问属性的形式，如：`<expression>.functionProperty()` 或者 `<expression>['functionProperty']()`，而函数调用不存在 `<expression>()`。
+
+    ['Hello', 'World'].join(', '); // 方法调用
+    ({ ten: function() { return 10; } }).ten(); // 方法调用
+    var obj = {};  
+    obj.myFunction = function() {  
+      return new Date().toString();
+    };
+    obj.myFunction(); // 方法调用
+
+    var otherFunction = obj.myFunction;  
+    otherFunction();     // 函数调用  
+    parseFloat('16.60'); // 函数调用  
+    isNaN(0);            // 函数调用  
+
+#### 方法调用中的 `this`
+
+> `this` 在方法调用中指向的是拥有该方法的对象
+
+当在一个对象里调用方法时，`this` 代表的是对象它自身。让我们创建一个对象，其包含一个可以递增属性的方法。
+
+    var calc = {  
+      num: 0,
+      increment: function() {
+        console.log(this === calc); // => true
+        this.num += 1;
+        return this.num;
+      }
+    };
+    // 方法调用，this 指向 calc
+    calc.increment(); // => 1  
+    calc.increment(); // => 2  
+
+`calc.increment()` 调用意味着上下文执行环境在 `calc` 对象里，因此使用 `this.sum` 递增 `num` 这个属性是可行的。
+
+一个 JavaScript 对象继承方法来自于它自身的属性。当一个被继承方法在对象中调用时，上下文执行环境同样是对象本身。
+
+    var myDog = Object.create({  
+      sayName: function() {
+         console.log(this === myDog); // => true
+         return this.name;
+      }
+    });
+    myDog.name = 'Milo';  
+    // 方法调用， this 指向 myDog
+    myDog.sayName(); // => 'Milo'  
+
+`Object.create()` 创建了一个新的对象 `myDog` 并且设置了属性，`myDog` 对象继承了 `myName`方法。当 `myDog.sayName()` 被执行时，上下文执行环境指向 `myDog`。
+
+在 ECMAScript 5 的 `class` 语法中， 方法调用指的是实例本身。
+
+    class Planet {  
+      constructor(name) {
+        this.name = name;    
+      }
+      getName() {
+        console.log(this === earth); // => true
+        return this.name;
+      }
+    }
+    var earth = new Planet('Earth');  
+    // 方法调用，上下文为 earth
+    earth.getName(); // => 'Earth'  
+
+#### 陷阱：方法会分离它自身的对象
+
+一个对象中的方法可能会被提取抽离成一个变量。当使用这个变量调用方法时，开发者可能会误认为 `this` 指向的还是定义该方法时的对象。
+
+如果方法调用不依靠对象，那么就是一个函数调用，即 `this` 指向全局对象 `object` 或者在严格模式下为 `undefined`。创建函数绑定可以修复上下文，使该方法被正确对象调用。
+
+下面的例子创建了构造器函数 `Animal` 并且创建了一个实例 `myCat`，在 `setTimeout()` 定时器 1s 后打印 `myCat` 对象信息。
+
+    function Animal(type, legs) {  
+      this.type = type;
+      this.legs = legs;  
+      this.logInfo = function() {
+        console.log(this === myCat); // => false
+        console.log('The ' + this.type + ' has ' + this.legs + ' legs');
+      }
+    }
+    var myCat = new Animal('Cat', 4);  
+    // 打印出 "The undefined has undefined legs"
+    // 或者在严格模式下抛出错误 TypeError
+    setTimeout(myCat.logInfo, 1000);  
+
+开发者可能认为在 `setTimeout` 下调用 `myCat.logInfo()` 会打印出 `myCat` 对象的信息。但实际上这个方法被分离了出来作为了参数传入函数内 `setTimeout(myCat.logInfo)`，然后 1s 后会发生函数调用。当 `logInfo` 被作为函数调用时，`this` 指向全局对象 `object` 或者在严格模式下为 `undefined`，因此对象信息没有正确地被打印。
+
+方法绑定可以使用 `.bind()` 方法。如果被分离的方法绑定了 `myCat` 对象，那么上下文问题就可以被解决了：
+
+    function Animal(type, legs) {  
+      this.type = type;
+      this.legs = legs;  
+      this.logInfo = function() {
+        console.log(this === myCat); // => true
+        console.log('The ' + this.type + ' has ' + this.legs + ' legs');
+      };
+    }
+    var myCat = new Animal('Cat', 4);  
+    // 打印 "The Cat has 4 legs"
+    setTimeout(myCat.logInfo.bind(myCat), 1000); 
+
+此时，`myCat.logInfo.bind(myCat)` 返回的新函数调用里的 `this` 指向了 `myCat`。
