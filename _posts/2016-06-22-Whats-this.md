@@ -239,7 +239,7 @@ categories: JavaScript
 
 方法调用表现为对象属性访问的形式，支持传入用成对引号包裹起来的一系列参数。上个例子中，`myObject.helloFunction()` 其实就是对象 `myObject` 上对属性 `helloFunction` 的方法调用。同样，`[1, 2].join(',')` 和 `/\s/.test('beautiful world')` 都是方法调用。
 
-区分函数调用和方法调用是非常重要的，它们是不同类型的调用方式。主要的差别在于方法调用为访问属性的形式，如：`<expression>.functionProperty()` 或者 `<expression>['functionProperty']()`，而函数调用不存在 `<expression>()`。
+区分函数调用和方法调用是非常重要的，它们是不同类型的调用方式。主要的差别在于方法调用为访问属性的形式，如：`<expression>.functionProperty()` 或者 `<expression>['functionProperty']()`，而函数调用为 `<expression>()`。
 
 ```JavaScript 
 
