@@ -1,14 +1,6 @@
 # Tech Diary
 
-- 技术帖 [[ issue ]](https://github.com/zchen9/code/issues)
-- 文艺码 [[ code ]](http://www.chen9.info/code/)
+记录日常开发踩坑以及一些好玩有趣的新技术
 
-### Todo
-
-- [ ] HTML5 Canvas
-
-### Done
-
-- [x] Redesign Theme
-- [x] MEAN Notes
-- [x] Move bookmarks to issue
+- 最新文章都在 [[ issue ]](https://github.com/zchen9/code/issues) 更新，方便 ~
+- [[ code ]](http://www.chen9.info/code/) 站点文章已不更新，同步太麻烦，懒...
