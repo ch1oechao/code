@@ -9,7 +9,7 @@ categories: HTML
 
 #### 学习HTML5的一些网站
 - [[ HTML5 Doctor ]](http://html5doctor.com/)
-- [[ Dive Into HTML5 ]](http://diveintohtml5.info/)
+- [[ HTML CHEAT SHEET ]](https://digital.com/tools/html-cheatsheet/)
 - [[ W3C ]](http://www.w3.org/html/wg/drafts/html/master/Overview.html)
 
 #### 跨浏览器HTML5
